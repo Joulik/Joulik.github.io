@@ -37,7 +37,7 @@
     <div class="container"> -->
         <div class="row mb-2">
             <div class="col-sm-6 col-lg-10">
-                <input type="text" id="uploaded_street_name" class="form-control form-control" placeholder="Indiquez un nom de rue, par ex. de Gaulle, Accacias ou Bateliers etc.">
+                <input type="text" id="uploaded_street_name" class="form-control form-control" placeholder="Indiquez par ex. Foch, Rosiers...">
             </div>
             <div class="col-sm-6 col-lg-2">
                 <button class="button btn btn-primary" id="requestbutton" type="button">Start</button>
@@ -62,11 +62,20 @@
     <script>
         
         $('#requestbutton').click(function() {
-        $('#requestbutton').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Processing...').addClass('disabled');
-        makeRequest();
+            makeRequest();
+        });
+
+        $('#uploaded_street_name').keypress(function (e){
+            var key = e.which;
+                if(key == 13)  // the enter key code
+                    {   
+                        makeRequest();  
+                    }
         });
 
         function makeRequest() {
+
+            $('#requestbutton').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Processing...').addClass('disabled');
 
             var street_name = document.getElementById("uploaded_street_name").value;
             var data = {"street_name": street_name};
