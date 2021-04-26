@@ -1,133 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="jquery-jvectormap-2.0.5/jquery-jvectormap-2.0.5.css" type="text/css" media="screen"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="jquery-jvectormap-2.0.5/jquery-jvectormap-2.0.5.min.js" ></script>
-    <script src="jquery-jvectormap-fr_regions_2016-merc.js"></script>
-    <script src="jquery-jvectormap-fr-merc.js"></script>
-    
-    <title>Rues de France</title>
+  <title>Joulik's Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    
-    <div class="container">
-        <div class="jumbotron row mb-1">
-            <h1>Bienvenue sur Rues de France</h1>
-        </div>
-    
-        <div class="row mb-1" style="padding-left: 10px; padding-right: 10px;">
-        <h4>
-            <p>
-                Combien y a-t-il de rues, avenues, boulevards, allées etc. qui portent le nom d'une personne célèbre ou d'un type d'arbre par exemple ?
-            </p>
-            
-            <p>Où sont situées ces rues en France ?</p>
-        </h4>
-        </div>
-    
-        <div class="row mb-2">
-            <div class="col-sm-6 col-lg-10">
-                <input type="text" id="uploaded_street_name" class="form-control form-control" placeholder="Indiquez par ex. Foch, Rosiers, Champs...">
-            </div>
 
-            <div class="col-sm-6 col-lg-2">
-                <button class="button btn btn-primary" id="requestbutton" type="button">Start</button>
-            </div>
-        </div>
-    
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h4 id="total_number"></h4>
-            </div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="index.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="webapps/rues-de-france/index.html">Rues de France</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Médailles du CNRS</a>
+      </li>   
+    </ul>
+  </div>  
+</nav>
 
-            <div class="col-sm-6">
-                <div id="map-dens" style="width: 100%; height: 320px"></div>
-            </div>
-        </div>
+<div class="container" style="margin-top:30px">
+  <div class="row">
+      
+    <div class="col-sm-6">
+        <a href="webapps/rues-de-france/index.html">  
+      <h2>Rues de France</h2></a>
+      <h5>Webapp</h5>
+      <br>
+      <p>Visualisez dans quels départements se trouvent les rues, avenues, boulevards etc. qui portent un nom particulier.</p>
+      <a href="webapps/rues-de-france/index.html">
+        <center><img src="images/rues_de_france_Hirondelles.png" style="width: 100%;" alt="Image is missing, sorry"></center>
+      </a>
     </div>
 
-    <script>
+    <div class="col-sm-6">
+      <h2>Médailles du CNRS</h2>
+      <h5>Blog post</h5>
+      <br>
+      <p>Explorez la ditribution par genre des médailles du CNRS.</p>
+    </div>
+  </div>
+</div>
 
-        $('#requestbutton').click(function() {
-            if(document.getElementById("uploaded_street_name").value.length == 0)
-            {
-                alert("Veuillez remplir ce champ")
-            } else {
-            makeRequest();}
-        });
-
-        $('#uploaded_street_name').keypress(function (e){
-            var key = e.which;
-                if(key == 13)  // 13 is RETURN key code
-                    {if(document.getElementById("uploaded_street_name").value.length == 0)
-                    {
-                        alert("Veuillez remplir ce champ")
-                    } else {   
-                        makeRequest();}  
-                    }
-        });
-
-        function makeRequest() {
-
-            $('#requestbutton').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Processing...').addClass('disabled');
-
-            var street_name = document.getElementById("uploaded_street_name").value;
-            var data = {"street_name": street_name};
-            
-            $.ajax({
-               url: "https://234zziyame.execute-api.eu-west-3.amazonaws.com/v1/submit_button_lambda_handler",
-               type: "POST",
-               data: JSON.stringify(data),
-               success: function(response) {
-
-                //handle the response received from AWS
-                handleResponse(response);
-               }
-            });
-
-        }
-
-        function handleResponse(analysisResult) {
-               
-            densData = analysisResult["nbr_streets_per_region"];
-            totStreetNbr = analysisResult["total_street_nbr"];
-            console.log(densData);
-
-            // clean map area
-            document.getElementById("map-dens").innerHTML='';
-            // clean text box
-            document.getElementById("uploaded_street_name").value='';
-
-            // show results on map
-            $('#map-dens').vectorMap({
-                map: 'fr_merc',
-                series: {
-                    regions: [{
-                        values: densData,
-                        scale: ['#C8EEFF', '#0071A4'],
-                        normalizeFunction: 'polynomial'
-                    }]
-                },
-                onRegionTipShow: function(e, el, code){
-                el.html(el.html()+' - '+densData[code]+' résultat(s)');
-                }
-            });
-
-            // total number of requested street 
-            $('#total_number').html(analysisResult["total_street_nbr"])
-            
-            // reinitialize request button
-            $('#requestbutton').html('Start').removeClass('disabled');
-
-       }
-
-    </script>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>joulik.github.io</p>
+</div>
 
 </body>
 </html>
