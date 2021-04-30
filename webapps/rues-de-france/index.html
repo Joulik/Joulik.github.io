@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="jquery-jvectormap-2.0.5/jquery-jvectormap-2.0.5.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -16,11 +17,12 @@
 </head>
 <body>
     
+    <!-- jumbotron -->
     <div class="jumbotron text-center container" style="margin-bottom:0">
         <h1>Bienvenue sur Rues de France</h1>
     </div>
     
-
+    <!-- navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark container">
         <a class="navbar-brand" href="#">Rues de France</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -40,39 +42,54 @@
 
     <div class="container">
 
+        <!-- Presentation of app -->
         <div class="row mb-1" style="padding-left: 10px; padding-right: 10px; padding-top: 10px;">
-        <h5>
-            <p>
-                Combien y a-t-il de rues, d'avenues, de boulevards, d'allées etc. qui portent par exemple le nom d'un.e artiste, le nom d'une espèce d'arbre ou d'oiseau ou le nom d'un métier ?
-            </p>
+            <h5>
+                <p>
+                    Combien y a-t-il de rues, d'avenues, de boulevards, d'allées etc. qui portent par exemple le nom d'un.e artiste, le nom d'une espèce d'arbre ou d'oiseau ou le nom d'un métier ?
+                </p>
             
-            <p>Où sont situées ces rues en France ?</p>
-        </h5>
+                <p>Où sont situées ces rues en France ?</p>
+            </h5>
         </div>
     
         <div class="row mb-2">
+            <!-- form -->
             <div class="col-sm-6 col-lg-10">
                 <input type="text" id="uploaded_street_name" class="form-control form-control" placeholder="Indiquez par ex. Foch, Rosiers, Champs...">
             </div>
 
+            <!-- Start/Processing button -->
             <div class="col-sm-6 col-lg-2">
                 <button class="button btn btn-primary" id="requestbutton" type="button">Start</button>
             </div>
         </div>
     
         <div class="row mb-2">
-            <div class="col-sm-6">
-                <h4 id="total_number"></h4>
-            </div>
-            <!-- https://stackoverflow.com/questions/52373042/html-box-with-inside-a-list-of-element -->
+            
+            <!-- France map -->
             <div class="col-sm-6">
                 <div id="map-dens" style="width: 100%; height: 310px"></div>
             </div>
+            
+            <div class="col-sm-6">
+                <!-- Total number of streets corresponding to query -->
+                <div class="container">
+                    <h4 id="total_number"></h4>
+                </div>
+ 
+                <!-- List of towns corresponding to query with a limit of 100 -->
+                <div class="container ex1">
+                    <ul id="town_list"></ul>
+                </div>
+            </div>
+              
         </div>
     </div>
 
     <script>
 
+        // get user request 
         $('#requestbutton').click(function() {
             if(document.getElementById("uploaded_street_name").value.length == 0)
             {
@@ -81,6 +98,7 @@
             makeRequest();}
         });
 
+        // do not tolerate empty requests
         $('#uploaded_street_name').keypress(function (e){
             var key = e.which;
                 if(key == 13)  // 13 is RETURN key code
@@ -92,6 +110,7 @@
                     }
         });
 
+        // trigger AWS API Gateway
         function makeRequest() {
 
             $('#requestbutton').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Processing...').addClass('disabled');
@@ -100,7 +119,10 @@
             var data = {"street_name": street_name};
             
             $.ajax({
-               url: "https://234zziyame.execute-api.eu-west-3.amazonaws.com/v1/submit_button_lambda_handler",
+               // Prod
+               //url: "https://234zziyame.execute-api.eu-west-3.amazonaws.com/v1/submit_button_lambda_handler",
+               // Dev
+               url: "https://ydiinbptd2.execute-api.eu-west-3.amazonaws.com/default/ruesdefrance_dev",
                type: "POST",
                data: JSON.stringify(data),
                success: function(response) {
@@ -116,12 +138,16 @@
                
             densData = analysisResult["nbr_streets_per_region"];
             totStreetNbr = analysisResult["total_street_nbr"];
+            townList = analysisResult["town_zip_list"];
             console.log(densData);
+            console.log(townList);
 
             // clean map area
             document.getElementById("map-dens").innerHTML='';
             // clean text box
             document.getElementById("uploaded_street_name").value='';
+            // clean town list box
+            document.getElementById("town_list").value='';
 
             // show results on map
             $('#map-dens').vectorMap({
@@ -138,8 +164,11 @@
                 }
             });
 
-            // total number of requested street 
-            $('#total_number').html(analysisResult["total_street_nbr"])
+            // total number of results for requested street name
+            $('#total_number').html(totStreetNbr)
+
+            // list of streets with their town and department zip code
+            $('#town_list').html(townList)
             
             // reinitialize request button
             $('#requestbutton').html('Start').removeClass('disabled');
