@@ -37,69 +37,58 @@
   </nav>
 
   <div class="container" style="margin-top:30px">
-    <div class="row">
 
-      <div class="col-sm-6">
-        <a href="webapps/rues-de-france/index.html">
-          <h2>Rues de France</h2>
-        </a>
-        <h5>Webapp</h5>
-        <br>
-        <p>Visualisez dans quels départements se trouvent les rues, avenues, boulevards etc. qui portent un nom
-          particulier.</p>
-        <a href="webapps/rues-de-france/index.html">
-          <center><img src="images/rues_de_france_Hirondelles.png" style="width: 100%;" alt="Image is missing, sorry">
-          </center>
-        </a>
+      <div class="card-deck">
+
+        <div class="card" style="width: 400px;">
+          <img src="images/rues_de_france_Hirondelles.png" style="width: 100%;" alt="Image is missing, sorry">
+          <div class="card-body">
+            <h4>Rues de France</h4>
+            <p class="card-text">Visualisez dans quels départements se trouvent les rues, avenues, boulevards etc. qui portent un nom
+              particulier.</p>
+              <a href="webapps/rues-de-france/index.html" class="btn btn-primary">Démarrer</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 400px;" id="steganographie">
+          <img src="images/steganography_carrier_image.png" style="width: 100%;" alt="Image is missing, sorry">
+          <div class="card-body">
+            <h4>Stéganographie numérique</h4>
+            <p class="card-text">L'image ci-dessous peut être modifiée de façon imperceptible à l'oeil pour cacher et communiquer une autre
+              image contenant un texte, un plan etc. Le destinataire de l'image, s'il connaît le mécanisme de chiffrement,
+              pourra déchiffrer le contenu tandis que toute autre personne ne verra qu'une image anodine. C'est le principe
+              de la stéganographie.</p>
+              <i>
+                Le repository github est consultable <a href="https://github.com/Joulik/BasicDigitalSteganography">ici</a>.
+              </i>
+          </div>
+        </div>
+
+        <div class="card" style="width: 400px;" id="fun">
+          <img src="images/fun_python.gif" style="width: 100%;" alt="Image is missing, sorry">
+          <div class="card-body">
+            <h4>Harmonic Mirror</h4>
+            <p class="card-text">S'amuser avec sa webcam. Travail inspiré de la simulation moléculaire.</p>
+              <i>
+                Le repository github est consultable <a href="https://github.com/Joulik/HarmonicMirror">ici</a>.
+              </i>
+          </div>
+        </div>
+
+        <div class="card" style="width: 400px;">
+          <img src="images/Illustration_entropie.jpg" style="width: 100%;" alt="Image is missing, sorry">
+          <div class="card-body">
+            <h4>Entropie</h4>
+            <p class="card-text">Qu'est-ce que l'entropie ?</p>
+            <a href="posts/entropie.html" class="btn btn-primary">Lire</a>
+          </div>
+        </div>
+
       </div>
 
-      <div class="col-sm-6" id="steganographie">
-        <h2>Stéganographie numérique</h2>
-        <h5>Blog post</h5>
-        <br>
-        <p>L'image ci-dessous peut être modifiée de façon imperceptible à l'oeil pour cacher et communiquer une autre
-          image contenant un texte, un plan etc. Le destinataire de l'image, s'il connaît le mécanisme de chiffrement,
-          pourra déchiffrer le contenu tandis que toute autre personne ne verra qu'une image anodine. C'est le principe
-          de la stéganographie.</p>
-        <p>
-          <center><img src="images/steganography_carrier_image.png" style="width: 250px;" alt="Image is missing, sorry">
-          </center>
-          <i>
-            Le repository github est consultable <a href="https://github.com/Joulik/BasicDigitalSteganography">ici</a>.
-          </i>
-        </p>
-      </div>
-
-      <div class="col-sm-6" id="fun">
-        <h2>Harmonic Mirror</h2>
-        <h5>Python pour le fun</h5>
-        <br>
-        <p>S'amuser avec sa webcam. Travail inspiré de la simulation moléculaire.</p>
-        <p>
-          <i>
-            Le repository github est consultable <a href="https://github.com/Joulik/HarmonicMirror">ici</a>.
-          </i>
-        </p>
-        <center><img src="images/fun_python.gif" style="width: 100%;" alt="Image is missing, sorry"></center>
-      </div>
-
-      <div class="col-sm-6">
-        <a href="posts/entropie.html">
-          <h2>Entropie</h2>
-        </a>
-
-        <h5>Blog post</h5>
-        <br>
-        <p>Qu'est-ce que l'entropie ?</p>
-        <a href="posts/entropie.html">
-          <center>
-            <img src="images/Illustration_entropie.jpg" style="width: 80%;" alt="Image is missing, sorry">
-          </center>
-        </a>
-      </div>
-
-    </div>
   </div>
+
+  <br/>
 
   <div class="jumbotron text-center" style="margin-bottom:0">
     <p>joulik.github.io</p>
