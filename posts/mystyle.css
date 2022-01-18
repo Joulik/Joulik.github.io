@@ -1,0 +1,9 @@
+#progress-bar {
+    --scrollAmount: 0%;
+    background-image: linear-gradient(to right, rgb(59, 95, 196),var(--scrollAmount),transparent 0);
+    width: var(--scrollAmount);
+    height: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}

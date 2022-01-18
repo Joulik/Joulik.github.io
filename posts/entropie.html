@@ -7,17 +7,23 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+
+    <script src="progressbar.js"></script>
+
     <title>Entropie</title>
 </head>
 
 <body>
+
+    <div id="progress-bar"></div>
 
     <div class="container cmath">
 
@@ -359,7 +365,8 @@
 
         <p>
             Reprenons les dispositions de jetons du paragraphe précédent. Nous pourrions dire que la disposition A est
-            en désordre au contraire de la disposition B dont le motif est très structuré. Toutefois nous savons maintenant
+            en désordre au contraire de la disposition B dont le motif est très structuré. Toutefois nous savons
+            maintenant
             que ni la disposition A, ni la disposition B n'ont d'entropie. Ce sont deux arrangements possibles de 20
             jetons dans une grille de 100 cases. Qui plus est, elles sont équiprobables si elles sont générées au
             hasard.
@@ -476,7 +483,7 @@
         </center>
     </div>
 
-    <br/>
+    <br />
 
     <div class="jumbotron text-center" style="margin-bottom:0">
         <p><a href="https://joulik.github.io/">joulik.github.io</a></p>
