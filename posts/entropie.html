@@ -28,23 +28,28 @@
     <div class="container cmath">
 
         <div class="alert alert-secondary">
-            <h2 class="alert-heading">Qu'est-ce que l'entropie ?</h2>
+            <h2 class="alert-heading">L'entropie, une mesure du désordre ?</h2>
         </div>
 
-        <p> Cet article a pour ambition de
-            permettre au lecteur profane d'appréhender
-            l'idée d'entropie en le guidant dans sa réflexion personnelle. Ce n'est ni un exposé encyclopédique, ni un
-            cours, bien qu'il soit inspiré de l'introduction à un cours de thermodynamique donné à un niveau
-            universitaire. Pour l'essentiel du propos, peu de calculs sont en jeu.</p>
-
         <p>
-            L'entropie est parfois présentée comme une mesure du désordre. Notre but est ici d'aider le lecteur à se
-            convaincre qu'une telle interprétation est inadaptée à la compréhension de la nature de l'entropie.
+            L'entropie est parfois présentée comme une mesure du désordre. Le but est ici de se
+            convaincre qu'une telle interprétation est en général inadaptée à la compréhension de la nature de l'entropie.
         </p>
 
-        <p>Une approche statistique est employée et nous nous appuierons sur des simulations programmées en langage
-            Python dont les scripts sont disponibles <a
-                href="https://github.com/Joulik/Joulik.github.io/tree/master/posts">ici</a>.</p>
+        <p> Cet article a pour ambition de permettre au lecteur profane d'appréhender l'idée d'entropie en le guidant 
+            dans sa réflexion personnelle. Une approche mathématique est employée. Cependant, pour l'essentiel du propos, 
+            peu de calculs sont en jeu. 
+        </p>
+        
+        <p>
+            D'autres articles discuteront de l'entropie en lien avec des systèmes physiques
+        </p>
+             
+        <p>    
+            Les résultats de simulations sont utilisés à des fins d'illustration.
+            Les scripts en langage Python de ces simulations sont disponibles 
+            <a href="https://github.com/Joulik/Joulik.github.io/blob/master/posts/scripts_entropie.ipynb">ici</a>.
+        </p>
 
         <p>Bonne lecture.</p>
 
@@ -53,18 +58,28 @@
         </h3>
 
         <p>
-            Pour commencer, utilisons un jeu très simple, celui de <i>Pile ou Face</i>.
+            Utilisons pour commencer un jeu très simple, <i>Pile ou Face</i>.
         </p>
 
         <p>
-            Si nous lançons une pièce un grand nombre de fois et que cette pièce est bien équilibrée, nous nous
-            attendons à observer
-            <i>Pile</i> et <i>Face</i> dans des proportions très proches.
+            Lorsqu'on lance une pièce bien équilibrée, on a une chance sur deux de tirer <i>Pile</i> 
+            et une chance sur deux de tirer <i>Face</i>. En d'autres termes, la probabilité d'observer <i>Pile</i> 
+            et la probabilité d'observer <i>Face</i> sont égales et valent `1/2`.
         </p>
 
         <p>
-            Sur le graphique ci-dessous, obtenu à l'aide d'une simulation de 10000 lancers, sont réprésentés le
-            nombre de tirages où les côtés <i>Pile</i> et <i>Face</i> ont été obtenus.
+            Que va-t-on observer si on lance une pièce un grand nombre de fois, par exemple 10000 fois, ou si on demande à 
+            10000 personnes de jeter chacune une pièce ?
+        </p>
+
+        <p>
+            C'est une tâche assez longue que l'on peut facilement confier à un ordinateur par le biais d'une simulation.
+            On réalise ainsi en une fraction de seconde ce qui prendrait des heures dans la réalité.
+        </p>
+        
+        <p>
+            Le graphique ci-dessous a été obtenu à l'aide d'un programme informatique qui a simulé 10000 lancers.
+            Y sont réprésentés le nombre de fois où <i>Pile</i> et <i>Face</i> ont été observés.
         </p>
 
         <center>
@@ -72,18 +87,21 @@
         </center>
 
         <p>
-            Comme nous le prévoyions, les nombres de fois où <i>Pile</i> et <i>Face</i> ont été observés sont très
-            proches. Pour cette simulation, 5010 fois pour <i>Face</i> et 4090 fois pour <i>Pile</i>.
+            Pour cette simulation, <i>Face</i> a été observé 5010 fois et <i>Pile</i> a été observé 4990 fois.
+            Peut-être aviez-vous anticipé ce résultat ? Le fait que <i>Pile</i> et <i>Face</i> sont observés 
+            dans des proportions très proches provient du fait que chaque lancer de pièce individuel a une probabilité 
+            égale d'aboutir à <i>Pile</i> ou <i>Face</i> .
         </p>
 
         <p>
-            Renouvelons le jeu, mais cette fois-ci lançons deux pièces par tirage.
-            Quatre résultats sont possibles : <i>Pile-Pile</i> (PP), <i>Pile-Face</i> (PF),
-            <i>Face-Pile</i> (FP) et <i>Face-Face</i> (FF).
-            Si nous procédons à de multpiles tirages avec deux pièces, nous nous attendons à observer PP, PF, FP et FF
-            un nombre similaire de fois. Ces quatre arrangements étant en effet équiprobables, avec la probabilité
-            `1/4`, c'est-à-dire une
-            chance sur quatre.
+            Renouvelons le jeu, mais cette fois-ci en lançant successivement deux pièces et en notant l'ordre des résultats.
+            Quatre résultats sont possibles : <i>Pile</i> puis <i>Pile</i> (noté PP), <i>Pile</i> puis <i>Face</i> (noté PF),
+            <i>Face</i> puis <i>Pile</i> (noté FP) et <i>Face</i> puis <i>Face</i> (noté FF).
+        </p>
+        <p>
+            Si l'on procéde à de multpiles tirages avec deux pièces, mettons 10000, on s'attend à observer PP, PF, FP et FF
+            un nombre similaire de fois. Ces quatre arrangements ayant en effet chacun une chance sur quatre d'être obtenu. 
+            On dit qu'ils sont équiprobables, avec la probabilité égale à `1/4`.
         </p>
 
         <p>
@@ -96,58 +114,58 @@
         </center>
 
         <p>
-            Nous remarquons que chaque arrangement FF, FP, PF et PP a été obtenu environ 2500 fois, soit près d'un quart
-            du temps,
-            comme le laissait prévoir la probabilité `1/4`.
+            On peut remarquer que chaque arrangement FF, FP, PF et PP a été obtenu environ 2500 fois, soit près d'un quart
+            du temps, comme le laissait prévoir la probabilité `1/4`.
         </p>
 
         <p>
-            Jusqu'ici nous nous sommes intéressés aux arrangements ordonnés des pièces. C'est-à-dire que l'ordre des
-            pièces importait. En effet, les tirages PF et FP étaient considérés comme distincts. Pour comprendre
-            l'entropie, nous devons aussi nous intéresser aux arrangements non ordonnés. Clarifions donc les termes
-            <b>ordonné</b> et <b>non ordonné</b>.
+            Dans l'expérience avec deux pièces, FP et PF ont chacun une pièce sur <i>Pile</i> 
+            et une pièce sur <i>Face</i>. Ainsi, on peut dire que FP et PF représentent deux réalisations possibles du 
+            tirage avec une pièce sur <i>Pile</i> et une pièce sur <i>Face</i>. 
+            En revanche, PP est la seule réalisation possible du tirage avec les deux pièces sur <i>Pile</i>. 
+            De même, FF est la seule réalisation possible du tirage avec les deux pièces sur <i>Face</i>. 
         </p>
 
-        <p>
-            L'illustration ci-dessous représente deux tirages à cinq pièces disposées dans deux arrangements
-            ordonnés. En haut, l'arrangement <i>Pile Face Pile Pile Pile</i> (PFPPP). En bas, l'arrangement <i>Pile Pile
-                Face Pile
-                Pile</i> (PPFPP). Nous faisons la disctinction entre les deux arrangements car les pièces sont disposées
-            dans un
-            certain ordre.
+        <p> 
+            Approfondissons notre discussion avec l'exemple d'un jeu à trois pièces.
+            Tous les tirages possibles sont représentés sur l'illustration ci-dessous. 
+            On peut regrouper des arrangements pour donner une description globale des tirages.
+            En effet, il existe trois tirages avec une pièce sur <i>Pile</i> et deux pièces sur <i>Face</i>.
+            Il existe trois tirages avec deux pièces sur <i>Pile</i> et une sur <i>Face</i>.
+            En ce qui concerne les tirages avec les trois pièces identiques, ils sont uniques.
         </p>
 
         <center>
-            <img src="images_entropie/Tirages_5_pieces_ordonnees.png" style="width: 300px;">
+            <img src="images_entropie/Tirages_3_pieces.png" style="width: 300px;">
         </center>
 
         <br />
-
+        
         <p>
-            Dans l'illustration ci-dessous, la dispositions des pièces change d'un arrangement à l'autre. Cela ne nous
-            permet pas de définir un ordre sans ambiguïté. Cependant, nous remarquons que les deux arrangements sont
-            deux combinaisons avec quatre <i>Pile</i> et une <i>Face</i>. Nous parlerons alors de l'arrangement non
-            ordonné 4P1F. Nous dirons par ailleurs que PFPPP et PPFPP sont deux combinaisons possibles de 4P1F.
+            Les arrangements qui donnent une description globale d'un groupe de tirages sont appelés des <b>macro-états</b>.
+            Les arrangements qui décrivent les tirages de façon détaillée sont appelés des <b>micro-états</b>.
+            Par exemples, les tirages <i>Face Pile Pile</i> (noté FPP), <i>Pile Face Pile</i> (noté PFP) 
+            et <i>Pile Pile Face</i> (noté PPF) sont les trois micro-états qui correspondent au macro-état 
+            avec deux pièces sur <i>Pile</i> et une pièce sur <i>Face</i> (noté 2P1F).
         </p>
 
-        <center>
-            <img src="images_entropie/Tirages_5_pieces_non_ordonnees.png" style="width: 300px;">
-        </center>
-
-        <br />
+        <p>
+            En reconsidérant les tirages avec trois pièces, on remarque qu'il y a trois macro-états 
+            qui possèdent chacun un ou plusieurs micro-états.
+        </p>
 
         <p>
             Revenons aux tirages avec deux pièces.
-            Les arrangements ordonnés PF et FP correspondent à un unique arrangement non ordonné avec une
-            pièce sur <i>Pile</i> et une pièce sur <i>Face</i> (1P1F). Les trois arrangements non ordonnés sont donc :
-            deux
-            fois <i>Pile</i> (2P), deux fois <i>Face</i> (2F) et une fois <i>Pile</i> et une fois <i>Face</i> (1P1F).
+            Les micro-états PF et FP correspondent au macro-état avec une
+            pièce sur <i>Pile</i> et une pièce sur <i>Face</i> (1P1F). 
+            Les trois macro-états du jeu à deux pièces sont donc :
+            deux fois <i>Pile</i> (2P), deux fois <i>Face</i> (2F) et une fois <i>Pile</i> et une fois <i>Face</i> (1P1F).
             Leurs probabilités respectives sont `1/4`, `1/4` et `1/2`.
         </p>
 
         <p>
             La simulation avec 10000 tirages de deux pièces a été réanalysée mais cette fois en s'intéressant aux
-            arrangements non ordonnés.
+            macro-états.
             Le graphique ci-dessous résume cette analyse en montrant le nombre de fois où chacun des trois arrangements
             2F, 2P et 1P1F a été observé.
         </p>
@@ -165,14 +183,13 @@
         </p>
 
         <p>
-            Étudions maintenant le nombre de fois où les arrangements non ordonnés possibles ont été obtenus en
+            Étudions maintenant le nombre de fois où les macro-états possibles ont été obtenus en
             utilisant 4, puis 16 pièces par tirage, toujours en ayant simulés 10000 tirages.
         </p>
 
         <p>
-            Dans le cas du jeu à 4 pièces, on peut remarquer ci-dessous que c'est l'arrangement non ordonné avec deux
-            fois
-            <i>Face</i> et deux fois <i>Pile</i> (2F2P) qui est le plus observé.
+            Dans le cas du jeu à 4 pièces, on peut remarquer ci-dessous que c'est l'arrangement avec deux
+            fois <i>Face</i> et deux fois <i>Pile</i> (2F2P) qui est le plus observé.
         </p>
 
         <center>
@@ -181,8 +198,7 @@
 
         <p>
             Dans le cas du jeu à 16 pièces ci-dessous, c'est l'arrangement avec huit fois <i>Face</i> et huit fois
-            <i>Pile</i>
-            (8F8P) qui est le plus observé.
+            <i>Pile</i> (8F8P) qui est le plus observé.
         </p>
 
         <center>
