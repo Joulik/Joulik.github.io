@@ -28,7 +28,7 @@
     <div class="container cmath">
 
         <div class="alert alert-secondary">
-            <h2 class="alert-heading">L'entropie, une mesure du désordre ?</h2>
+            <h2 class="alert-heading">L'entropie est-elle une mesure du désordre ?</h2>
         </div>
 
         <p>
@@ -36,13 +36,13 @@
             convaincre qu'une telle interprétation est en général inadaptée à la compréhension de la nature de l'entropie.
         </p>
 
-        <p> Cet article a pour ambition de permettre au lecteur profane d'appréhender l'idée d'entropie en le guidant 
-            dans sa réflexion personnelle. Une approche mathématique est employée. Cependant, pour l'essentiel du propos, 
+        <p> Cet article a pour ambition de permettre au lecteur profane d'appréhender l'idée d'entropie. 
+            Une approche mathématique est employée. Cependant, pour l'essentiel du propos, 
             peu de calculs sont en jeu. 
         </p>
         
         <p>
-            D'autres articles discuteront de l'entropie en lien avec des systèmes physiques
+            D'autres articles discuteront de l'entropie en lien avec des systèmes physiques.
         </p>
              
         <p>    
@@ -73,12 +73,13 @@
         </p>
 
         <p>
-            C'est une tâche assez longue que l'on peut facilement confier à un ordinateur par le biais d'une simulation.
-            On réalise ainsi en une fraction de seconde ce qui prendrait des heures dans la réalité.
+            Réaliser 10000 lancers est une tâche longue et fastidieuse qu'un ordinateur 
+            peut effectuer par le biais d'un programme informatique appellé simulation. 
+            Par ce moyen, on peut réaliser en une fraction de seconde ce qui prendrait des heures dans la réalité.
         </p>
         
         <p>
-            Le graphique ci-dessous a été obtenu à l'aide d'un programme informatique qui a simulé 10000 lancers.
+            Le graphique ci-dessous a été obtenu à l'aide d'une telle simulation de 10000 lancers.
             Y sont réprésentés le nombre de fois où <i>Pile</i> et <i>Face</i> ont été observés.
         </p>
 
@@ -87,26 +88,28 @@
         </center>
 
         <p>
-            Pour cette simulation, <i>Face</i> a été observé 5010 fois et <i>Pile</i> a été observé 4990 fois.
-            Peut-être aviez-vous anticipé ce résultat ? Le fait que <i>Pile</i> et <i>Face</i> sont observés 
+            Comme on le voit sur la gauche du graphique <i>Face</i> a été observé 5010 fois dans cette simulation particulière. 
+            Sur la droite, on voit que <i>Pile</i> a été observé 4990 fois.
+            Le fait que <i>Pile</i> et <i>Face</i> sont observés 
             dans des proportions très proches provient du fait que chaque lancer de pièce individuel a une probabilité 
-            égale d'aboutir à <i>Pile</i> ou <i>Face</i> .
+            égale d'aboutir à <i>Pile</i> ou <i>Face</i>.
         </p>
 
         <p>
             Renouvelons le jeu, mais cette fois-ci en lançant successivement deux pièces et en notant l'ordre des résultats.
-            Quatre résultats sont possibles : <i>Pile</i> puis <i>Pile</i> (noté PP), <i>Pile</i> puis <i>Face</i> (noté PF),
+            Quatre observations sont possibles : <i>Pile</i> puis <i>Pile</i> (noté PP), <i>Pile</i> puis <i>Face</i> (noté PF),
             <i>Face</i> puis <i>Pile</i> (noté FP) et <i>Face</i> puis <i>Face</i> (noté FF).
         </p>
         <p>
-            Si l'on procéde à de multpiles tirages avec deux pièces, mettons 10000, on s'attend à observer PP, PF, FP et FF
-            un nombre similaire de fois. Ces quatre arrangements ayant en effet chacun une chance sur quatre d'être obtenu. 
+            Si l'on procéde à de multpiles tirages avec deux pièces, mettons 10000, on s'attend à observer 
+            PP, PF, FP et FF un nombre similaire de fois. 
+            Ces quatre arrangements ayant en effet chacun une chance sur quatre d'être obtenu. 
             On dit qu'ils sont équiprobables, avec la probabilité égale à `1/4`.
         </p>
 
         <p>
             Le graphique ci-dessous est là encore le résultat d'une simulation qui a réalisé 10000 tirages avec deux
-            pièces. Il montre le nombre de fois où chacun des quatre arrangements a été observé.
+            pièces. Il montre le nombre de fois où FF, FP, PF et PP ont chacun été observés.
         </p>
 
         <center>
@@ -114,25 +117,22 @@
         </center>
 
         <p>
-            On peut remarquer que chaque arrangement FF, FP, PF et PP a été obtenu environ 2500 fois, soit près d'un quart
-            du temps, comme le laissait prévoir la probabilité `1/4`.
+            On peut remarquer que chaque arrangement a été obtenu environ 2500 fois, soit près d'un quart
+            du temps, comme le laissait prévoir la probabilité d'une chance sur quatre.
         </p>
 
         <p>
             Dans l'expérience avec deux pièces, FP et PF ont chacun une pièce sur <i>Pile</i> 
-            et une pièce sur <i>Face</i>. Ainsi, on peut dire que FP et PF représentent deux réalisations possibles du 
+            et une pièce sur <i>Face</i>. 
+            Ainsi, on peut dire que FP et PF représentent deux réalisations possibles du 
             tirage avec une pièce sur <i>Pile</i> et une pièce sur <i>Face</i>. 
-            En revanche, PP est la seule réalisation possible du tirage avec les deux pièces sur <i>Pile</i>. 
-            De même, FF est la seule réalisation possible du tirage avec les deux pièces sur <i>Face</i>. 
+            En revanche, PP est la seule réalisation possible du tirage avec les deux pièces sur <i>Pile</i>, 
+            de même que FF est la seule réalisation possible du tirage avec les deux pièces sur <i>Face</i>. 
         </p>
 
         <p> 
-            Approfondissons notre discussion avec l'exemple d'un jeu à trois pièces.
+            Approfondissons la discussion avec l'exemple d'un jeu où l'on tire trois pièces.
             Tous les tirages possibles sont représentés sur l'illustration ci-dessous. 
-            On peut regrouper des arrangements pour donner une description globale des tirages.
-            En effet, il existe trois tirages avec une pièce sur <i>Pile</i> et deux pièces sur <i>Face</i>.
-            Il existe trois tirages avec deux pièces sur <i>Pile</i> et une sur <i>Face</i>.
-            En ce qui concerne les tirages avec les trois pièces identiques, ils sont uniques.
         </p>
 
         <center>
@@ -142,31 +142,42 @@
         <br />
         
         <p>
-            Les arrangements qui donnent une description globale d'un groupe de tirages sont appelés des <b>macro-états</b>.
-            Les arrangements qui décrivent les tirages de façon détaillée sont appelés des <b>micro-états</b>.
-            Par exemples, les tirages <i>Face Pile Pile</i> (noté FPP), <i>Pile Face Pile</i> (noté PFP) 
-            et <i>Pile Pile Face</i> (noté PPF) sont les trois micro-états qui correspondent au macro-état 
-            avec deux pièces sur <i>Pile</i> et une pièce sur <i>Face</i> (noté 2P1F).
+            Là encore, on peut regrouper des arrangements pour donner une description globale des tirages qui peuvent être observés.
+            On note alors qu'il existe trois tirages avec une pièce sur <i>Pile</i> et deux pièces sur <i>Face</i>. 
+            Ils sont entourés en bleu sur la figure.
+            Il existe trois tirages, entourés en vert, avec deux pièces sur <i>Pile</i> et une pièce sur <i>Face</i>.
+            En ce qui concerne les tirages avec les trois pièces identiques, trois <i>Pile</i>, entourés en rouge, 
+            ou trois <i>Face</i>, entourés en orange, ils sont chacun uniques.
         </p>
 
         <p>
-            En reconsidérant les tirages avec trois pièces, on remarque qu'il y a trois macro-états 
-            qui possèdent chacun un ou plusieurs micro-états.
+            Les arrangements qui donnent une description globale d'un groupe de tirages sont appelés des <b>macro-états</b>.
+            Les arrangements qui décrivent les tirages de façon détaillée sont appelés des <b>micro-états</b>.
+        </p>
+
+        <p>    
+            Par exemple, les tirages FPP, PFP et PPF sont trois micro-états. Ce sont trois micro-états du macro-état 
+            2P1F avec deux pièces sur <i>Pile</i> et une pièce sur <i>Face</i>.
+        </p>
+
+        <p>
+            De manière générale, on dit qu'un macro-état possède un ou plusieurs micro-états.
         </p>
 
         <p>
             Revenons aux tirages avec deux pièces.
-            Les micro-états PF et FP correspondent au macro-état avec une
-            pièce sur <i>Pile</i> et une pièce sur <i>Face</i> (1P1F). 
-            Les trois macro-états du jeu à deux pièces sont donc :
-            deux fois <i>Pile</i> (2P), deux fois <i>Face</i> (2F) et une fois <i>Pile</i> et une fois <i>Face</i> (1P1F).
-            Leurs probabilités respectives sont `1/4`, `1/4` et `1/2`.
+            Les micro-états PF et FP sont les deux réalisations du macro-état avec une
+            pièce sur <i>Pile</i> et une pièce sur <i>Face</i> noté 1P1F. 
+            Les trois macro-états du jeu à deux pièces sont :
+            2P pour deux fois <i>Pile</i>, 2F pour deux fois <i>Face</i> et 1P1F pour une fois <i>Pile</i> et une fois <i>Face</i>.
+            Leurs probabilités respectives sont `1/4`, `1/4` et `1/2`, c'est-à-dire une chance sur quatre pour 2P et 2F, 
+            et une chance sur deux pour 1P1F.
         </p>
 
         <p>
             La simulation avec 10000 tirages de deux pièces a été réanalysée mais cette fois en s'intéressant aux
             macro-états.
-            Le graphique ci-dessous résume cette analyse en montrant le nombre de fois où chacun des trois arrangements
+            Le graphique ci-dessous résume cette analyse en montrant le nombre de fois où chacun des trois macro-états
             2F, 2P et 1P1F a été observé.
         </p>
 
@@ -176,15 +187,14 @@
 
         <p>
             Comme l'indiquaient les probabilités mentionnées ci-dessus,
-            c'est bien l'arrangement avec une pièce <i>Pile</i> et une pièce <i>Face</i> qui est le plus observé
+            c'est bien le macro-état avec une pièce <i>Pile</i> et une pièce <i>Face</i> qui est le plus observé
             et ce près de la moitié du temps (4979 fois pour la simulation présentée).
             Les combinaisons avec les deux pièces identiques 2P et 2F sont quant à elles observées un nombre similaire
             de fois, environ égal à 2500 chacune.
         </p>
 
         <p>
-            Étudions maintenant le nombre de fois où les macro-états possibles ont été obtenus en
-            utilisant 4, puis 16 pièces par tirage, toujours en ayant simulés 10000 tirages.
+            Jouons maintenant avec 4, puis 16 pièces par tirage, toujours en simulant 10000 tirages.
         </p>
 
         <p>
@@ -206,33 +216,31 @@
         </center>
 
         <p>
-            Si nous réalisions des simulations avec un nombre encore plus grand de pièces, nous trouverions encore que
-            l'arrangement non ordonné le plus observé serait celui pour lequel le nombre de fois <i>Pile</i> est égal au
-            nombre de fois <i>Face</i> (pour un nombre de pièces pair). Par exemple, avec 100 pièces, nous trouverions
-            que
-            l'arrangement le plus probable serait 50 fois <i>Face</i> et 50 fois <i>Pile</i> (50F50P). Et si le nombre
-            de pièces
-            était impair ? Quels arrangements seraient les plus probables ?
+            Si on réalisait des simulations avec un nombre encore plus grand de pièces, on trouverait encore que
+            le macro-état le plus observé serait celui pour lequel le nombre de fois <i>Pile</i> est égal au
+            nombre de fois <i>Face</i> (pour un nombre de pièces pair). 
+            Par exemple, avec 100 pièces, on trouverait
+            que l'arrangement le plus probable serait 50 fois <i>Face</i> et 50 fois <i>Pile</i> (50F50P).
         </p>
 
         <p>
-            Résumons ce que les tirages de pièces nous apprennent.
+            Résumons ce que le jeu <i>Pile ou Face</i> nous apprend.
         <ul>
             <li>
                 Pour chaque pièce, la probabilité de tirer <i>Pile</i> est toujours d'une chance
                 sur deux. Il en va de même avec la probabilité de tirer <i>Face</i>.
             </li>
             <li>
-                Quel que soit le nombre de pièces, les arrangements ordonnés sont équiprobables avec la probabilité
-                `1/2^n` où <i>n</i> est le nombre de pièces. Par exemple, dans un jeu à cinq pièces nous n'avons ni
-                plus ni moins de chance de tirer PFPPP, PPFPP que de tirer FFFFF. Concrètement, une chance sur `2^5`,
-                soit une chance sur 32.
+                Quel que soit le nombre de pièces, tous les micro-états sont équiprobables avec la probabilité
+                `1/2^n` où <i>n</i> est le nombre de pièces. Par exemple, dans un jeu à cinq pièces on n'a ni
+                plus ni moins de chance de tirer PFPPP, PPFPP que de tirer FFFFF. Concrètement, une chance sur `2^5` 
+                (2 puissance 5), soit une chance sur 32.
             </li>
             <li>
-                Si nous nous intéressons aux arrangements non ordonnés, le comportement de l'ensemble de pièces prises
-                au hasard devient bien plus prédictible.
-                En effet, l'arrangement non ordonné le plus probable aura autant de <i>Pile</i> que de <i>Face</i>.
-                Par exemple, dans un jeu à 16 pièces, nos chances sont maximum en misant sur 8P8F alors qu'il est bien
+                Si on s'intéresse aux macro-états, le comportement de l'ensemble des pièces tirées 
+                au hasard devient bien plus prédictible car tous les macro-états ne sont pas équiprobables.
+                En effet, le macro-état le plus probable aura autant de <i>Pile</i> que de <i>Face</i>.
+                Par exemple, dans un jeu à 16 pièces, nos chances de gagner sont maximum en misant sur 8P8F alors qu'il est bien
                 plus hasardeux de miser sur 16F ou même 14F2P.
             </li>
 
@@ -241,13 +249,29 @@
         </p>
 
         <p>
-            Nous pouvons donc conclure que dans ce jeu de hasard, l'arrangement non ordonné avec autant de côtés
-            <i>Pile</i>
-            que de côtés <i>Face</i> a un
-            statut bien particulier. C'est cet arrangement qui est le plus probable. Souvenez-vous par exemple qu'avec
+            On peut donc conclure que dans ce jeu de hasard, le macro-état avec autant de pièces tombées côté
+            <i>Pile</i> que de pièces tombées côté <i>Face</i> a un statut bien particulier.
+            C'est cet arrangement qui est le plus probable. Souvenez-vous par exemple qu'avec
             deux pièces l'arrangement 1F1P est le plus probable puisqu'il correspond à FP et PF, alors que 2P et 2F
-            qui correspondent à PP et FF sont uniques. Nous verrons par le calcul que l'arrangement non ordonné le plus
-            probable est en effet celui qui possède le plus grand nombre d'arrangements ordonnés.
+            qui correspondent à PP et FF sont uniques.
+        </p>
+
+        <p>
+            Avant de parler d'entropie, réfléchissons encore un peu sur le jeu de hasard <i>Pile ou Face</i>.
+            Imaginons qu'on nous propose de jouer avec huit pièces. Pour gagner, on nous donne le choix de prédire
+            le détail du tirage, ce qui nous rapporterait un gain maximum, ou bien de prédire combien de <i>Pile</i> et 
+            combien de <i>Face</i> seront observées, ce qui nous rapporterait un peu moins. Que vaut-il mieux faire ? 
+        </p>
+
+        <p>
+            Concrètement se pose le problème de prédire quel micro-état précis va être tiré si on recherche un gain maximum, 
+            ou de prédire à quel macro-état le tirage appartiendra si on vise un gain moindre.
+            Chaque micro-état a une probabilité de `1/2^8`. Donc si on mise par exemple sur FPFPFPFP, 
+            on a une chance sur 256 de gagner. 
+            Si on mise sur le macro-état le plus probable 4P4F, notre chance de succès est 70 fois plus grande avec 27,3%, 
+            soit plus d'une chance sur quatre.
+            Est-ce qu'une probabilité de succès d'une chance sur quatre est suffisante pour se risquer ? 
+            Peut-être vaut-il simplement mieux ne pas jouer...
         </p>
 
         <h2>
@@ -255,15 +279,29 @@
         </h2>
 
         <p>
+            Quand on a bien compris ce que sont les micro-états et les macro-états, la définition de l'entropie est 
+            relativement simple. 
+            <b>L'entropie mesure la variété de réalisations d'un macro-état en termes de ses micro-états.</b>
+            Toute la difficulté est de définir ce qu'on entend par micro-état et macro-état 
+            quand on s'intéresse à autre chose que <i>Pile ou Face</i>.
+        </p>
+
+        <p>
+            Reconsidérons le jeu à quatre pièces. Le macro-état 2P2F a le plus grand nombre de micro-états.
+            Il a donc une entropie plus grande que tous les autres macro-états.
+            On peut également noter que le macro-état le plus probable est celui qui a le plus grand nombre de 
+            micro-états. C'est donc le macro-état le plus probable qui a la plus grande entropie.
+        </p>
+        <!-- <p>
             Pour faire connaissance avec l'entropie, nous devons pénétrer sur son territoire, celui de la
             thermodynamique statistique pour y emprunter quelques éléments de langage. Notez bien que la thermodynamique
             statistique traite
             de systèmes physiques qui contiennent un nombre de particules de l'ordre du nombre d'Avogradro, donc bien
             loin des quelques pièces dont nous avons discuté jusqu'ici. Cependant, nous nous permettons d'ouvrir la
             frontière entre les deux mondes à des fins de compréhension.
-        </p>
+        </p> -->
 
-        <p>
+        <!-- <p>
             Jetons <i>n</i> pièces au hasard. Le nombre de pièces qui vont attérir sur une face donnée n'est
             pas contraint. Nous disons en thermodynamique statistique que c'est un degré de liberté. Dans le cas de nos
             jets
@@ -299,20 +337,22 @@
             Nous venons sans le savoir de donner une formulation du deuxième principe de la thermodynamique. Les
             systèmes tendent à
             s'équilibrer dans le macro-état le plus probable, celui qui a le plus grand nombre de micro-états.
-        </p>
+        </p> -->
         <p>
-            A l'instar de Boltzmann, désignons par <i>W</i> le nombre de micro-états d'un macro-état donné et par
-            <i>S</i> l'entropie. La formule de Boltzmann `S = k_B ln W` permet de calculer l'entropie comme le
-            produit du logarithme népérien de <i>W</i> (`ln W`) et de la constante de Boltzmann (`k_B`).
+            Reste à donner une formule pour calculer l'entropie.
+            Comme l'a fait l'Autrichien Ludwig Boltzmann au XIXème siècle, 
+            désignons par <i>W</i> le nombre de micro-états d'un macro-état donné et par
+            <i>S</i> l'entropie. La formule de Boltzmann `S = k ln W` permet de calculer l'entropie comme le
+            produit du logarithme népérien de <i>W</i> (`ln W`) et de la constante de Boltzmann (`k`).
         </p>
-        <p>
-            Mettons de côté le logarithme et la constante `k_B` pour formuler les conclusions importantes auxquelles
+        <!-- <p>
+            Mettons de côté le logarithme et la constante `k` pour formuler les conclusions importantes auxquelles
             nous
             sommes parvenus : <b>Les systèmes tendent à s'équilibrer dans le macro-état qui rend l'entropie maximum.
                 L'entropie d'un macro-état mesure la variété de réalisations de ce celui-ci en termes de
                 micro-états.</b>
             Si une phrase devait être retenue à propos de l'entropie, ce serait cette dernière.
-        </p>
+        </p> -->
 
         <h3>
             Prêts pour un test de compréhension ?
@@ -339,14 +379,14 @@
         </p>
 
         <p>
-            Réponse : Ni l'une, ni l'autre. Les deux sont deux micro-états d'un même macro-état. Pour obtenir l'entropie
+            Réponse : Ni l'une, ni l'autre. Les deux sont des micro-états d'un même macro-état. Pour obtenir l'entropie
             de ce macro-état il faut calculer le nombre de combinaisons correspondant au placement de 20 jetons dans
             100 cases.
         </p>
 
         <p>
-            Question (difficile) : Définissons le degré de liberté comme le nombre de jetons à placer sur la grille.
-            Partant du macro-état ci-dessus avec 20 jetons sur 100 cases, comment générer un macro-état avec une
+            Question (difficile) : 
+            Partant du macro-état avec 20 jetons sur 100 cases, comment générer un macro-état avec une
             entropie plus grande ?
         </p>
 
@@ -362,7 +402,7 @@
             nous l'avons vu, le nombre de micro-états, et donc l'entropie, est maximum pour 50 pièces sur <i>Pile</i> et
             50 pièces sur <i>Face</i>. Partant de 20 jetons, augmenter ce nombre génère un
             macro-état d'entropie plus grande. Nous ne devons cependant pas dépasser 79 jetons. Souvenez-vous des
-            pièces. Le nombre d'arrangements ordonnés pour 80P20F est le même que pour 20P80F. Ainsi l'entropie pour 20
+            pièces. Le nombre de mirco-états pour 80P20F est le même que pour 20P80F. Ainsi l'entropie pour 20
             jetons est la même que pour 80. En conclusion, partant de 20 jetons, l'entropie augmentera en utilisant
             entre 21 et 79 jetons. Le maximum d'entropie étant obtenu avec 50 jetons.
         </p>
@@ -375,15 +415,14 @@
             Il est fréquent de lire que l'entropie serait une mesure du désordre dans un système donné. Un
             exemple très qualitatif qui revient souvent est celui qu'une chambre d'enfant en désordre a une entropie
             plus grande que lorsqu'elle est rangée. La discussion ci-dessus devrait nous avoir armés pour comprendre ce
-            qui
-            est incorrect dans de telles affirmations.
+            qui est incorrect dans de telles affirmations.
         </p>
 
         <p>
             Reprenons les dispositions de jetons du paragraphe précédent. Nous pourrions dire que la disposition A est
             en désordre au contraire de la disposition B dont le motif est très structuré. Toutefois nous savons
             maintenant
-            que ni la disposition A, ni la disposition B n'ont d'entropie. Ce sont deux arrangements possibles de 20
+            que ni la disposition A, ni la disposition B n'ont d'entropie. Ce sont deux micro-états possibles de 20
             jetons dans une grille de 100 cases. Qui plus est, elles sont équiprobables si elles sont générées au
             hasard.
         </p>
@@ -391,44 +430,43 @@
             Revenons à la chambre d'enfant. Voyez-vous pourquoi elle n'a pas moins d'entropie quand elle est rangée
             que lorsqu'elle est en désordre ? La configuration "chambre rangée" est un micro-état du même macro-état que
             toutes
-            celles jugées en désordre. Nous pouvons calculer l'entropie de la chambre avec un certain nombre
+            celles jugées en désordre. On peut calculer l'entropie de la chambre avec un certain nombre
             d'objets et un certain nombre d'emplacements où les ranger, mais pour un nombre d'objets et d'emplacements
             donnés, qu'elle soit rangée ou en désordre ne change pas son entropie.
         </p>
 
         <p>
-            Nous le voyons, penser à l'entropie en termes de mesure du désordre n'est pas adapté. En adoptant ce point
-            de vue, nous nous forçons à réfléchir en termes de combinaison unique, alors que l'entropie mesure le nombre
-            de combinaisons différentes qui correspondent à un arrangement donné.
+            On le voit, penser à l'entropie en termes de mesure du désordre n'est pas adapté. En adoptant ce point
+            de vue, on se force à réfléchir en termes de combinaison unique, de micro-état unique, alors que l'entropie 
+            mesure la variété de micro-états pour un arrangement global donné.
         </p>
 
         <h3>Si vous aimez le calcul...</h3>
 
         <p>
-            Si nous lançons quatre pièces au hasard, comment sait-on que 2F2P correspond au plus grand nombre
-            d'arrangements
-            ordonnés que l'on peut obtenir avec ces quatre pièces ? De manière plus générale, si nous jouons avec
-            <i>n</i> pièces, si <i>k</i> pièces tombent côté <i>Pile</i>, combien d'arrangements ordonnés correspondent
+            Lançons quatre pièces au hasard, comment sait-on que 2F2P a le plus grand nombre
+            de micro-états que l'on peut obtenir avec ces quatre pièces ? De manière plus générale, si on joue avec
+            <i>n</i> pièces, si <i>k</i> pièces tombent côté <i>Pile</i>, combien de micro-états correspondent
             à
             <i>k</i>P(<i>n-k</i>)F ?
         </p>
 
         <p>
             En langage mathématique, nous recherchons le nombre de combinaisons de <i>k</i> éléments dans un ensemble de
-            <i>n</i> éléments avec `k>=n`. Ce nombre est `C_n^k = {n!} / {k!(n-k!)}`.
+            <i>n</i> éléments avec `k>=n`. Ce nombre est `C_n^k = {n!} / {k!(n-k)!}`.
         </p>
 
         <p>
-            Pour le jeu à quatre pièces, le tableau ci-dessous donne les valeurs du nombre de combinaisons pour chaque
-            arrangement non ordonné possible. Le lecteur averti remarquera que ces nombres sont ceux du triangle de
+            Pour le jeu à quatre pièces, le tableau ci-dessous donne les valeurs du nombre de micro-états pour chaque
+            macro-état possible. Le lecteur averti remarquera que ces nombres sont ceux du triangle de
             Pascal pour <i>n</i>=4.
         </p>
 
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Arrangement </th>
-                    <th>Nombre de combinaisons&nbsp;</th>
+                    <th>Macro-état </th>
+                    <th>Nombre de micro-états&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
@@ -456,15 +494,15 @@
         </table>
 
         <p>
-            Nous constatons bien que pour quatre pièces, le nombre de combinaisons maximum est obtenue avec deux pièces
+            On constate bien que pour quatre pièces, le nombre de micro-états maximum est obtenu avec deux pièces
             côté <i>Pile</i> et deux pièces côté <i>Face</i> (2P2F).
         </p>
 
         <p>
-            Comment démontrer dans le cas général où <i>n</i> pièces (<i>n</i> pair) sont jetées que c'est l'arrangement
-            avec `n/2` pièces sur <i>Pile</i> qui a le plus grand nombre d'arrangements ordonnés ? Il s'agit de
-            rechercher pour quelle valeur de <i>k</i> `C_n^k` est maximum et de montrer que ce maximum est unique. Cela
-            requiert plusieurs lignes de calcul et un peu de temps.
+            Comment démontrer que dans le cas général où <i>n</i> pièces (<i>n</i> pair) sont jetées c'est le macro-état
+            avec `n/2` pièces sur <i>Pile</i> qui a le plus grand nombre de micro-états ? Il s'agit de
+            rechercher la valeur de <i>k</i> pour laquelle `C_n^k` est maximum et de montrer que ce maximum est unique. Cela
+            requiert plusieurs lignes de calcul et un peu de temps. A vos crayons !
         </p>
 
         <p>Question : Une simulation place des jetons au hasard sur une grille de 16 cases. De combien augmente
@@ -485,9 +523,8 @@
             la probabilité d'obtenir 8P8F ?</p>
 
         <p>Réponse : Le nombre total de combinaisons possibles avec 16 pièces est `2^16 = 65536`. La probabilité
-            d'obtenir 15P1F est `C_16^1 / 2^16 = 1/65536 approx 0,0015%`. La probabilité d'obtenir 8P8F est `C_16^8 /
-            2^16 = 12870/65536 approx 20%`, soit plus de 10000 fois plus que la probabilité d'obtenir 15P1F.</p>
-
+            d'obtenir 15P1F est `C_16^1 / 2^16 = 16/65536 approx 0,024%`. La probabilité d'obtenir 8P8F est `C_16^8 /
+            2^16 = 12870/65536 approx 20%`, soit environ 10000 fois plus que la probabilité d'obtenir 15P1F.</p>
     </div>
 
     <div>
