@@ -178,7 +178,7 @@
             La simulation avec 10000 tirages de deux pièces a été réanalysée mais cette fois en s'intéressant aux
             macro-états.
             Le graphique ci-dessous résume cette analyse en montrant le nombre de fois où chacun des trois macro-états
-            2F, 2P et 1P1F a été observé.
+            2F, 1P1F et 2P a été observé.
         </p>
 
         <center>
@@ -190,7 +190,7 @@
             c'est bien le macro-état avec une pièce <i>Pile</i> et une pièce <i>Face</i> qui est le plus observé
             et ce près de la moitié du temps (4979 fois pour la simulation présentée).
             Les combinaisons avec les deux pièces identiques 2P et 2F sont quant à elles observées un nombre similaire
-            de fois, environ égal à 2500 chacune.
+            de fois, environ égale à 2500 chacune.
         </p>
 
         <p>
@@ -233,7 +233,7 @@
             <li>
                 Quel que soit le nombre de pièces, tous les micro-états sont équiprobables avec la probabilité
                 `1/2^n` où <i>n</i> est le nombre de pièces. Par exemple, dans un jeu à cinq pièces on n'a ni
-                plus ni moins de chance de tirer PFPPP, PPFPP que de tirer FFFFF. Concrètement, une chance sur `2^5` 
+                plus ni moins de chance de tirer PFPPP, PPFPP que de tirer FFFFF, concrètement, une chance sur `2^5` 
                 (2 puissance 5), soit une chance sur 32.
             </li>
             <li>
@@ -251,9 +251,7 @@
         <p>
             On peut donc conclure que dans ce jeu de hasard, le macro-état avec autant de pièces tombées côté
             <i>Pile</i> que de pièces tombées côté <i>Face</i> a un statut bien particulier.
-            C'est cet arrangement qui est le plus probable. Souvenez-vous par exemple qu'avec
-            deux pièces l'arrangement 1F1P est le plus probable puisqu'il correspond à FP et PF, alors que 2P et 2F
-            qui correspondent à PP et FF sont uniques.
+            C'est cet arrangement qui est le plus probable.
         </p>
 
         <p>
@@ -266,12 +264,12 @@
         <p>
             Concrètement se pose le problème de prédire quel micro-état précis va être tiré si on recherche un gain maximum, 
             ou de prédire à quel macro-état le tirage appartiendra si on vise un gain moindre.
-            Chaque micro-état a une probabilité de `1/2^8`. Donc si on mise par exemple sur FPFPFPFP, 
+            Chaque micro-état a une probabilité de `1/256`. Donc si on mise par exemple sur FPFPFPFP, 
             on a une chance sur 256 de gagner. 
             Si on mise sur le macro-état le plus probable 4P4F, notre chance de succès est 70 fois plus grande avec 27,3%, 
             soit plus d'une chance sur quatre.
             Est-ce qu'une probabilité de succès d'une chance sur quatre est suffisante pour se risquer ? 
-            Peut-être vaut-il simplement mieux ne pas jouer...
+            Peut-être vaut-il simplement mieux ne pas jouer et garder son argent...
         </p>
 
         <h2>
@@ -402,7 +400,7 @@
             nous l'avons vu, le nombre de micro-états, et donc l'entropie, est maximum pour 50 pièces sur <i>Pile</i> et
             50 pièces sur <i>Face</i>. Partant de 20 jetons, augmenter ce nombre génère un
             macro-état d'entropie plus grande. Nous ne devons cependant pas dépasser 79 jetons. Souvenez-vous des
-            pièces. Le nombre de mirco-états pour 80P20F est le même que pour 20P80F. Ainsi l'entropie pour 20
+            pièces. Le nombre de micro-états pour 80P20F est le même que pour 20P80F. Ainsi l'entropie pour 20
             jetons est la même que pour 80. En conclusion, partant de 20 jetons, l'entropie augmentera en utilisant
             entre 21 et 79 jetons. Le maximum d'entropie étant obtenu avec 50 jetons.
         </p>
