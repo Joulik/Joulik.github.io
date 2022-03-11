@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+
+    <script src="progressbar.js"></script>
+
+    <title>Entropie</title>
+</head>
+
+<body>
+
+    <div id="progress-bar"></div>
+
+    <div class="container cmath">
+
+        <div class="alert alert-secondary">
+            <h2 class="alert-heading">Que nous apprennent les systèmes physiques sur l'entropie ?</h2>
+        </div>
+
+        <p>
+            Dans cet article nous allons étudier certains phénomènes physiques et les interpréter en termes d'entropie. 
+            Cela nous amènera à donner une formulation du second principe de la thermodynamique.
+        </p>
+    
+        <p>
+            Tout comme le premier article, on s'adresse ici au lecteur profane dans un but de vulgarisation. 
+            Cependant, des lecteurs plus avancés trouveront peut-être un point de vue différent de ce qu'ils connaissent déjà.
+        </p>
+
+        <p>
+            On fait suite ici au premier article dans laquel l'entropie était définie 
+            comme une mesure de la variété de réalisations d'un macro-état en termes de ses micro-états. 
+            Nous reviendrons sur ces termes.
+        </p>
+
+        <p>
+            Nous allons étudier des phénomènes au travers de modèles. 
+            Un modèle est une simplification de la réalité d'un phénomène. 
+            Cette simplification permet de comprendre des observations que l'on fait de ce phénomène.
+        </p>
+
+        <h3>
+            Pourquoi les gaz occupent tout l'espace qui leur est rendu disponible
+        </h3>
+
+        <p>
+            On s'intéresse au phénomène suivant : si on augmente le volume disponible pour un gaz, 
+            celui-ci se répand et l'occupe totalement.
+            On dit alors que les gaz exercent une pression.
+        </p>
+
+        <p>
+            Miniaturisons le système qui nous intéresse pour comprendre ce phénomène de pression exercée par les gaz.
+            Considérons un gaz composé de trois molécules. Chaque molécule est représentée par un jeton.
+            Considérons que le gaz est contenu dans une boîte à deux dimensions.
+            La boîte est elle-même divisée en compartiments, tous de même dimension.
+            Ceux-ci ne peuvent être occupés que par un seul jeton à la fois.
+            Ce modèle rappelle les jetons que l'on plaçait dans des cases dans le précédent article.
+        </p>
+
+        <p>
+            Commençons par nous intéresser au cas où les trois molécules sont confinées dans un espace dont le "volume" 
+            est de quatre compartiments. Ce premier cas est illustré ci-dessous.
+        </p>
+
+        <center>
+            <img src="images_entropie/Gaz_V_4.png" style="width: 250px">
+        </center>
+
+        <br/>
+
+        <p>
+            Sur la figure, on a représenté les quatre différents micro-états possibles dans lesquels pouvaient se trouver 
+            le système composé du gaz et de son contenant. On peut ainsi dire que le macro-état des trois molécules de gaz 
+            dans un volume de quatre compartiments a quatre micro-états. L'entropie de ce macro-état est donc 
+            proportionnelle à `ln 4`.
+        </p>
+
+        <p>
+            Elargissons maintenant à neuf compartiments le volume disponible pour les trois molécules de gaz. 
+            On obtient un nouveau macro-état dont un des micro-états est illustré ci-dessous. 
+        </p>
+
+        <center>
+            <img src="images_entropie/Gaz_V_9.png" style="width: 200px">
+        </center>
+
+        <br/>
+
+        <p>
+            Quelle est l'entropie des trois molécules dans un volume de neuf compartiments ? 
+            Pour répondre à cette question, nous devons dénombrer tous les micro-états possibles.
+            Il s'agit ici de trouver le nombre d'arragements possibles de trois compartiments contenant
+            chacun un jeton et six compartiments vides. La réponse est 84. Elle s'obtient en calculant 
+            `(9!)/{3!(9-3)!}`. L'entropie a donc augmentée avec le volume accessible au gaz.
+        </p>
+
+        <p>
+            Que se passe-t-il si on augmente encore le volume accessible aux trois molécules en passant à 16 compartiements ?
+            Un micro-état de ce macro-état est illustré ci-dessous.
+        </p>
+
+        <center>
+            <img src="images_entropie/Gaz_V_16.png" style="width: 200px">
+        </center>
+
+        <br/>
+
+        <p>
+            Le nombre de micro-états est égal à 560. Il s'obtient en dénombrant les arragements possibles 
+            de trois compartiments contenant chacun un jeton et 13 compartiments vides. 
+            Ce nombre s'obtient à partir de `(16!)/{3!(16-3)!}`. En ce qui concerne l'entropie, elle vaut ici `ln 560`.
+        </p>
+
+
+        <p>
+            système évolue évolution rend entropie maximum
+        </p>
+        
+        <p> 
+            Pour conclure... toutes le molécules dans un coin pas moins probables que toutes sur une diagonale, événements equiprobables
+        </p>
+
+        <p>
+            Augmentons à neuf cases le volume de la boîte contenant les trois molécules.
+            Le nombre de micro-états pour ce nouveau macro-état est `(9!)/{6!3!}`, soit 84.
+        </p>
+
+        <p>
+            Si on augmente encore le volume disponible pour les trois molécules en le passant à 16 cases,
+            le nombre de micro-états possibles devient `(16!)/{13!3!}`, soit 560.
+        </p>
+
+        <p>
+            On observe donc que le nombre de micro-états augmente avec le volume disponible.
+            Souvenons-nous maintenant que l'entropie d'un macro-état est proportionnelle au logarithme du nombre de micro-états.
+            Ainsi, si le nombre de micro-états augmente, l'entropie augmente.
+        </p>
+
+        <p>
+            D'après le modèle discuté ci-dessus, lorsqu'un gaz se répand alors qu'on augmente le volume qui le contient,
+            son entropie augmente.
+        </p>
+    </div>
+    
+
+    <!-- <div>
+        <center>
+            <a href="https://hits.seeyoufarm.com">
+                <img
+                    src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjoulik.github.io%2Fposts%2Fentropie.html&count_bg=%234D5FEE&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
+            </a>
+        </center>
+    </div>
+
+    <br /> -->
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p><a href="https://joulik.github.io/">joulik.github.io</a></p>
+    </div>
+
+</body>
+
+</html>
