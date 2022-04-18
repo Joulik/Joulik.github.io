@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
+
+    <title>Evolution du SMIC</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="alert alert-secondary">
+            <h2 class="alert-heading">Evolution du SMIC depuis le début des années 2000</h2>
+        </div>
+
+        <p>
+            <i>
+                "Le salaire minimum de croissance (Smic) correspond au salaire horaire minimum légal que le salarié doit percevoir."
+            </i> Source : <a href="https://www.service-public.fr/particuliers/vosdroits/F2300">Service-Public.fr</a>
+        </p>
+        
+        <p>
+            Le Smic est une référence de l'échelle des salaires.
+            Il représente la principale source de revenus de millions de salariés des classes populaires et de leurs familles.
+        </p>
+
+        <p>
+            On se pose ici la question de son évolution depuis le début des années 2000. 
+            Notons que cette période a été marquée par le passage à l'euro et l'instauration des 35 heures.
+        </p>
+
+        <p>
+            La revalorisation du Smic n'est généralement pas une faveur gouvernementale. 
+            Elle est inscrite dans le code du travail et son rôle est de tenir compte de l'augmentation des prix. 
+            Source et informations complémentaires : <a href="https://www.service-public.fr/particuliers/vosdroits/F2300">Service-Public.fr</a>
+        </p>
+
+        <p>
+            Le but ici est de comprendre l'évolution du Smic de manière très concrète, 
+            on pourrait dire du point de vue du porte-monnaie.
+            Lorsqu'on est payé au Smic, de combien d'euros dispose-t-on en plus d'une année sur l'autre pour faire face à l'inflation?
+        </p>
+
+        <p>
+            Sur la figure ci-dessous est illustrée l'évolution de la valeur du Smic horaire brut depuis 2000.
+            Par exemple, au 1er janvier 2020, le Smic horaire brut valait 10,35 euros.
+        </p>
+
+        <div id="smic_horaire_brut" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/smic.js"></script>
+
+        <p>
+            On remarque que le Smic horaire a augmenté le plus rapidement entre 2001 et 2005. 
+            Il s'agissait de compenser une possible baisse des salaires due à la réduction du temps de travail 
+            (mise en place des 35 heures).
+        </p>
+
+        <p>
+            Le gain en salaire mensuel brut à chaque revalorisation 
+            se chiffre au maximum à quelques dizaines d'euros.
+        </p>
+
+        <p>
+            Par exemple, au 1/1/2022 le Smic mensuel brut a été
+            revalorisé de 14 euros pour 35 heures de travail hebdomadaire 
+            comme on peut le voir sur le graphique ci-dessous.
+        </p>
+
+        <div id="smic_mensuel_brut" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/smic.js"></script>
+
+        <p>
+            Compte tenu des revalorisations, de combien d'euros augmente le Smic d'une année sur l'autre?
+        </p>
+        
+        <p>
+            Par exemple, suite aux augmentations survenues en 2021, 
+            un salarié au Smic aura perçu en 2021 287 euros brut de plus qu'en 2020, ce qui représente environ 230 euros net.
+            Les augmentations brut d'une année sur l'autre sont reportées sur le graphique ci-dessous.
+        </p>
+
+        <div id="smic_gain_annuel" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/smic.js"></script>
+
+    </div>
+</body>
+</html>
