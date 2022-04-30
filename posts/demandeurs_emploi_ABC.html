@@ -10,6 +10,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
 
     <title>Situation emploi cat. ABC</title>
 </head>
@@ -60,9 +61,17 @@
 
         <p>Son évolution depuis 1996 est illustrée ci-dessous pour les différents présidents de la République qui se sont succédés.</p>
 
-        <p>
+        <!-- <p>
             <img src="images_demandeurs_emplois/cat_A.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p>
+        </p> -->
+
+        <div id="demandeurs_emploi_cat_A" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
+
+        <br>
 
         <p>
             Les catégories B et C, dont on entend moins parler, correspondent aux demandeurs d'emploi avec une activité réduite.
@@ -83,9 +92,17 @@
 
         <p>L'évolution depuis 1996 pour la catégorie B est illustrée ci-dessous.</p>
 
-        <p>
+        <!-- <p>
             <img src="images_demandeurs_emplois/cat_B.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p>
+        </p> -->
+
+        <div id="demandeurs_emploi_cat_B" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
+
+        <br>
 
         <p>
             La catégorie C regroupe les :
@@ -97,9 +114,17 @@
 
         <p>Evolution pour la catégorie C depuis 1996.</p>
 
-        <p>
+        <!-- <p>
             <img src="images_demandeurs_emplois/cat_C.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p>
+        </p> -->
+
+        <div id="demandeurs_emploi_cat_C" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
+
+        <br>
 
         <p>
             Les demandeurs d'emploi des catégories B et C ont vu leur nombre plus que doubler sur la décennie 2009-2019.
@@ -112,9 +137,17 @@
             passant de près de trois millions de personnes à près de six millions.
         </p>
 
-        <p>
+        <!-- <p>
             <img src="images_demandeurs_emplois/cat_A+B+C.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p>
+        </p> -->
+
+        <div id="demandeurs_emploi_cat_ABC" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
+
+        <br>
 
         <p>
             Pour obtenir une vision globale du chômage en France, on inclut les catégories D et E qui regroupent 
@@ -139,9 +172,15 @@
             en combinant les catégories A, B, C, D et E.
         </p>
 
-        <p>
+        <!-- <p>
             <img src="images_demandeurs_emplois/cat_Toutes.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p>
+        </p> -->
+
+        <div id="demandeurs_emploi_cat_ttes" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
 
     </div>
 
