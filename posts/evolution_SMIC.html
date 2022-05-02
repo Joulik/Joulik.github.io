@@ -71,6 +71,18 @@
         </p>
 
         <p>
+            Le Smic mensuel suit de façon évidente les variations du Smic horaire. 
+            Sur la figure ci-dessous sont reportés le Smic mensuel brut et le Smic mensuel net depuis 2006. 
+            Ce dernier représente 79,2% du brut.
+        </p>
+
+        <div id="smic_mensuel" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/smic.js"></script>
+
+        <p>
             Le gain en salaire mensuel brut à chaque revalorisation 
             se chiffre au maximum à quelques dizaines d'euros.
             Ces revalorisations interviennent généralement une voire deux fois
@@ -83,7 +95,7 @@
             comme on peut le voir sur le graphique ci-dessous.
         </p>
 
-        <div id="smic_mensuel_brut" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+        <div id="augmentation_smic_mensuel_brut" class="plotly-graph-div" style="height:100%; width:100%;"></div>
     
         <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
   
@@ -100,11 +112,13 @@
             Les augmentations brut d'une année sur l'autre sont reportées sur le graphique ci-dessous.
         </p>
 
-        <div id="smic_gain_annuel" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+        <div id="augmentation_smic_annuel_brut" class="plotly-graph-div" style="height:100%; width:100%;"></div>
     
         <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
   
         <script type="text/javascript" src="js/smic.js"></script>
+
+        <br>
 
         Code source pour l'analyse et les figures : 
         <a href="https://github.com/Joulik/Joulik.github.io/blob/cards/posts/source_evolution_smic/evolution_smic.ipynb">joulik.github.io</a>
