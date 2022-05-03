@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +18,11 @@
     <div class="container">
 
         <div class="alert alert-secondary">
-            <h2 class="alert-heading">Evolution des catégories de demandeurs d'emploi depuis 1996</h2>
+            <h1 class="alert-heading" style="font-size: 32px">Evolution des catégories de demandeurs d'emploi depuis 1996</h2>
         </div>
 
         <p>
-            Les demandeurs d'emploi inscrits à Pôle Emploi sont repartis en cinq catégories A, B, C, D et E.
+            Les demandeurs d'emploi inscrits à Pôle emploi sont repartis en cinq catégories A, B, C, D et E.
         </p>
 
         <p>
@@ -35,11 +35,38 @@
         </p>
 
         <p>
-            Les données utilisées pour la présente analyse sont les données brutes mensuelles fournies par Pôle Emploi.
+            Les données utilisées pour la présente analyse sont les données brutes mensuelles fournies par Pôle emploi.
             Elles sont accessibles depuis 
             <a href="https://statistiques.pole-emploi.org/stmt/defm?lf=0&ss=1">
                 https://statistiques.pole-emploi.org/stmt/defm?fi=11&lf=0&ss=1</a>
         </p>
+
+        <p>
+            Les statistiques sur les demandeurs d'emploi sont souvent présentées en données corrigées 
+            des variations saisonnières et des effets des jours ouvrés.
+            La DARES a mis en ligne un dossier où sont abordés des points de méthodologie sur le calcul 
+            des données corrigées à partir des données brutes. Lien : 
+            <a href="https://dares.travail-emploi.gouv.fr/dossier/les-demandeurs-demploi">dares.travail-emploi.gouv.fr</a> 
+        </p>
+
+        <p>
+            Les données corrigées sont utilisées pour commenter des tendances sur plusieurs mois et 
+            analyser la conjoncture d'une période donnée. Les données brutes portent ces tendances. 
+            Analyser celles-ci permet de décrypter des variations sur le long terme mais aussi sur le court terme.
+            C'est pourquoi les données présentées ici sont des données brutes.
+        </p>
+
+        <p>
+            A noter que la correction des effets saisonniers, la "désaisonnalisation" des données, est relativement complexe
+            et nécessite de faire le choix d'une méthode ayant ses propres faiblesses.
+            L'Institut de la statistique du Québec a mis en ligne un document discutant en détails 
+            la désaisonnalisation.
+            Lien : <a href="https://statistique.quebec.ca/fr/document/la-desaisonnalisation-pourquoi-quand-comment">statistique.quebec.ca</a>
+        </p>
+
+        <h3>
+            Evolution des catégories d'inscrits
+        </h3>
 
         <p>
             La catégorie A est la plus largement commentée dans les médias, on pourrait même dire quasi-exclusivement.
@@ -54,11 +81,10 @@
             </i>.
         </p>
 
-        <p>Son évolution depuis 1996 est illustrée ci-dessous pour les différents présidents de la République qui se sont succédés.</p>
-
-        <!-- <p>
-            <img src="images_demandeurs_emplois/cat_A.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p> -->
+        <p>
+            Son évolution est illustrée ci-dessous pour les mandats des différents 
+            présidents de la République qui se sont succédés depuis 1996.
+        </p>
 
         <div id="demandeurs_emploi_cat_A" class="plotly-graph-div" style="height:100%; width:100%;"></div>
     
@@ -76,8 +102,10 @@
 
         <p>
             La catégorie B regroupe les :
-            <i>Personne(s) ayant exercé une activité réduite de 78 heures maximum par mois, 
-                tenue(s) d'accomplir des actes positifs de recherche d'emploi.</i>
+            <i>
+                Personne(s) ayant exercé une activité réduite de 78 heures maximum par mois, 
+                tenue(s) d'accomplir des actes positifs de recherche d'emploi.
+            </i>
         </p>
 
         <p>
@@ -86,10 +114,6 @@
         </p>
 
         <p>L'évolution depuis 1996 pour la catégorie B est illustrée ci-dessous.</p>
-
-        <!-- <p>
-            <img src="images_demandeurs_emplois/cat_B.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p> -->
 
         <div id="demandeurs_emploi_cat_B" class="plotly-graph-div" style="height:100%; width:100%;"></div>
     
@@ -109,10 +133,6 @@
 
         <p>Evolution pour la catégorie C depuis 1996.</p>
 
-        <!-- <p>
-            <img src="images_demandeurs_emplois/cat_C.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p> -->
-
         <div id="demandeurs_emploi_cat_C" class="plotly-graph-div" style="height:100%; width:100%;"></div>
     
         <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
@@ -128,13 +148,9 @@
 
         <p>
             Il est particulièrement remarquable que le nombre de demandeurs d'emplois dans les catégories 
-            A, B et C combinées a pratiquement doublé entre la crise des subprimes de 2008 et la crise du COVID débutée en 2020,
+            A, B et C combinées a pratiquement doublé entre la crise des subprimes de 2008 et la crise du COVID-19 débutée en 2020,
             passant de près de trois millions de personnes à près de six millions.
         </p>
-
-        <!-- <p>
-            <img src="images_demandeurs_emplois/cat_A+B+C.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p> -->
 
         <div id="demandeurs_emploi_cat_ABC" class="plotly-graph-div" style="height:100%; width:100%;"></div>
     
@@ -145,8 +161,7 @@
         <br>
 
         <p>
-            Pour obtenir une vision globale du chômage en France, on inclut les catégories D et E qui regroupent 
-            des demandeurs d'emploi.
+            Pour obtenir une vision globale du nombre d'inscrits à Pôle emploi, on inclut les catégories D et E.
         </p>
 
         <p>
@@ -163,13 +178,9 @@
         </p>
 
         <p>
-            On obtient une vision globale illustrée ci-dessous de l'évolution du nombre de demandeurs d'emplois des 25 dernières années
-            en combinant les catégories A, B, C, D et E.
+            L'évolution du nombre de demandeurs d'emplois inscrits au cours des 25 dernières années
+            est obtenue en combinant les catégories A, B, C, D et E.
         </p>
-
-        <!-- <p>
-            <img src="images_demandeurs_emplois/cat_Toutes.png" style="width: 100%;" alt="Image is missing, sorry">
-        </p> -->
 
         <div id="demandeurs_emploi_cat_ttes" class="plotly-graph-div" style="height:100%; width:100%;"></div>
     
@@ -177,14 +188,103 @@
   
         <script type="text/javascript" src="js/chomage.js"></script>
 
+        <br>
+        
+        <h3>
+            Analyse trimestrielle et annuelle des données brutes
+        </h3>
+
+        <p>
+            Lorsqu'on inspecte les données reportées sur le graphique pour la catégorie A, 
+            on remarque que le nombre d'inscrits diminue presque systématiquement entre janvier et juin, 
+            puis augmente entre juillet et décembre.
+        </p>
+
+        <p>
+            Si le nombre d'inscrits diminue d'un mois sur l'autre entre janvier et fin juin, 
+            on obtiendra alors 5 diminutions. A l'exception de 2009 et 2020, c'est ce qui 
+            s'est passé tous les ans comme le montre le graphique ci-dessous.
+        </p>
+
+        <div id="diminution_A_janv_juin" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
+
+        <p>
+            Ainsi si fin mars ou fin juin 2022 par exemple on observe une baisse du nombre d'inscrits en catégorie A 
+            par rapport au mois précédent, cette baisse est très probablement une variation saisonnière attendue plutôt 
+            qu'une tendance de fond.
+        </p>
+
+        <p>
+            Peut-on faire émerger des tendances sans pour autant corriger les données brutes des effets saisonniers ?
+            On peut par exemple analyser les données brutes de façon trimestrielle et comparer les années entre elles.
+        </p>
+
+        <p>
+            Intéressons-nous par exemple aux variations du nombre d'inscrits en catégorie A 
+            entre le dernier trimestre d'une année et le premier trimestre de l'année suivante.
+            Ces variations sont reportées sur le graphique ci-dessous.
+        </p>
+
+        <div id="variation_A_Q4Q1" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
+
+        <p>
+            On peut remarquer qu'à partir de 2009, le nombre d'inscrits augmentait toujours au premier trimestre 
+            de l'année en comparaison du quatrième trimestre de l'année précédente. Par exemple, en 2013 le nombre d'inscrits
+            au premier trimestre a augmenté de 3,8% par rapport au quatrième trimestre de 2012.
+            En ce qui concerne 2022, on peut donc penser que la baisse de 3,1% observée au premier trimestre n'est pas liée à 
+            un effet saisonnier.
+        </p>
+
+        <p>
+            Examinons maintenant l'évolution du nombre d'inscrits entre les premier et second trimestres.
+            Cette évolution va toujours dans le sens d'une diminution, sauf en 2020 avec une augmentation de 15,5% 
+            en raison de la crise du COVID-19 comme on le voit sur le graphique ci-dessous.
+        </p>
+
+        <div id="variation_A_Q1Q2" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
+
+        <p>
+            Ainsi, une diminution du nombre d'inscrits en données brutes en 2022 entre le premier et le second trimestres
+            n'aurait rien d'inattendu et relèverait des variations saisonnières.
+        </p>
+
+        <p>
+            Finalement, c'est une tendance sur le long terme, c'est-à-dire sur plusieurs années, qui a le plus de sens 
+            en ce qui concerne l'évolution du nombre de demandeurs d'emploi.
+            Le graphique ci-dessous montre que le nombre d'inscrits dans la catégorie A a diminué d'environ 200000 personnes 
+            entre 2015 et 2019. En 2021, ce nombre est revenu au niveau de 2019.
+        </p>
+
+        <div id="variation_A_ABC_moyenne_an" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/chomage.js"></script>
+
+        <p>
+            Lorsqu'on examine les données combinées des catégories A, B et C, 
+            on peut noter qu'après 2010 l'écart avec la catégorie A augmente. 
+            On peut interpréter cette tendance comme une précarisation accrue des offres sur le marché du travail. 
+        </p>
+
+        <p>
+            Code source pour l'analyse et les graphiques : 
+            <a href="https://github.com/Joulik/Joulik.github.io/blob/cards/posts/source_demandeurs_emplois/analysis_demandeurs_emplois_ABC.ipynb">ici</a>.
+        </p>
+
     </div>
-
-    <br>
-
-    <p>
-        Code source pour l'analyse et les graphiques : 
-        <a href="https://github.com/Joulik/Joulik.github.io/blob/cards/posts/source_demandeurs_emplois/analysis_demandeurs_emplois_ABC.ipynb">ici</a>.
-    </p>
 
     <h6 class="text-center">Depuis le 21/04/2022 : </h6>
 
