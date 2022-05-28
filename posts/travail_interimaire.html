@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
+
+    <title>L'intérim en France</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="alert alert-secondary">
+            <h1 class="alert-heading" style="font-size: 32px">Evolution du travail intérimaire en France depuis 2000</h2>
+        </div>
+
+        <p>
+            <i>Dernière mise-à-jour : DD MM YYYY.</i>
+        </p>
+
+        <p>
+            La Direction de l'animation de la recherche des études et des statistiques (DARES) produit des statistiques 
+            sur l'emploi intérimaire qui permettent de comprendre la structure et l'évolution de celui-ci.
+        </p>
+
+        <p>La définition de l'emploi intérimaire est clairement donnée sur le site de la DARES :
+            <i>"L'emploi intérimaire correspond à la mise à disposition temporaire d'un salarié par une entreprise de travail 
+                temporaire auprès d’une entreprise cliente utilisatrice, 
+                afin d'exécuter une mission dans le cadre d'un remplacement temporaire d'un salarié, 
+                de travaux saisonniers ou d'un accroissement temporaire de l'activité."</i>
+                Lien : 
+            <a href="https://dares.travail-emploi.gouv.fr/donnees/lemploi-interimaire">Dares.travail-emploi.gouv.fr</a>
+        </p>
+
+        <p>
+            Également sur le site de la DARES, est expliqué pourquoi le travail temporaire suscite un intérêt particulier :
+            <i>"Bien que représentant une part réduite de l’emploi salarié (entre 2 et 3 %), 
+                l’intérim est un indicateur conjoncturel avancé de l’évolution de l’activité économique : 
+                il constitue la composante de l’emploi salarié la plus sensible à la variation du climat économique, 
+                variant rapidement à la hausse ou à la baisse en fonction de l’activité."</i>
+        </p>
+
+        <h3>
+            Nombre d'intérimaires en fin de mois
+        </h3>
+
+        <p>
+            Pour estimer le nombre d'intérimaires, c'est le nombre de personnes en mission d'intérim durant tout ou partie 
+            des cinq jours ouvrés en fin de mois qui est retenu.
+            Si une personne a été en mission ces cinq jours, elle compte pour 1. 
+            Si une personne a été en mission trois jours sur ces cinq jours, elle compte pour 3/5, soit 0,6.
+        </p>
+
+        <p>
+            À partir des données mensuelles corrigées des variations saisonnières, on obtient le graphique ci-dessous 
+            pour le nombre d'intérimaires à partir de l'année 2000.
+            Données : 
+            <a href="https://dares.travail-emploi.gouv.fr/donnees/lemploi-interimaire">
+                Dares.travail-emploi.gouv.fr
+            </a>
+        </p>
+
+        <div id="nbr_interimaires_fin_mois" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/interim.js"></script>
+
+        <p>
+            L'emploi intérimaire a été marqué par les deux crises majeures survenues ces 20 dernières années, 
+            à savoir la crise financière de 2008-2009 et la crise sanitaire de 2019-2021.
+            Cependant la baisse de l'emploi intérimaire et la reprise de celui-ci à la suite de la crise financière 
+            se sont étendues sur une période plus longue que pour la crise sanitaire. 
+        </p>
+
+        <p>
+            Les données disponibles peuvent être décomposées par secteur d'activité. On note alors que 
+            le développement du travail intérimaire depuis 2015 est porté par le secteur tertiaire et 
+            dans une moindre mesure par le secteur industriel.
+            A partir de 2018, le secteur tertiaire dépasse le secteur industriel en termes d'emploi intérimaire.
+            Ces deux secteurs portent la progression marquée de l'intérim depuis 2021 
+            alors que le secteur de la construction est plutôt stable
+            comme le montre le graphique ci-dessous.
+        </p>
+
+        <div id="nbr_interimaires_par_secteur" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+    
+        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  
+        <script type="text/javascript" src="js/interim.js"></script>
+
+    </div>
+
+    <br />
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p><a href="https://joulik.github.io/">joulik.github.io</a></p>
+    </div>
+    
+</body>
